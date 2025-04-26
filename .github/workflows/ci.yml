@@ -21,7 +21,9 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
-
+      - name: Add Rust source component
+        run: rustup component add rust-src
+  
       - name: Check and test
         run: |
           cargo fmt --all --check
